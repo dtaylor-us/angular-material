@@ -1,0 +1,60 @@
+<!--<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">-->
+
+<!--  &lt;!&ndash;- Note that these columns can be defined in any order.-->
+<!--        The actual rendered columns are set as a property on the row definition" &ndash;&gt;-->
+
+<!--  &lt;!&ndash; Position Column &ndash;&gt;-->
+<!--  <ng-container matColumnDef="YEAR">-->
+<!--    <th mat-header-cell *matHeaderCellDef> No.</th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.YEAR}} </td>-->
+<!--  </ng-container>-->
+
+<!--  &lt;!&ndash; Name Column &ndash;&gt;-->
+<!--  <ng-container matColumnDef="ENERGY">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Name</th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.ENERGY}} </td>-->
+<!--  </ng-container>-->
+
+<!--  &lt;!&ndash; Weight Column &ndash;&gt;-->
+<!--  <ng-container matColumnDef="CAPACITY">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Weight</th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.CAPACITY}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+<!--  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+<!--</table>-->
+
+
+<div class="table-container">
+  <table style="width:100%; margin-top: 10pt;">
+    <tr class="row-border">
+      <th class="row-header">YEAR:</th>
+      <td class="year-header" *ngFor="let i of dataSource">
+        {{i.YEAR}}
+      </td>
+    </tr>
+    <tr class="row-border">
+      <th class="row-header">ENERGY:</th>
+      <td *ngFor="let load of dataSource; let index = index;">
+        <input [(ngModel)]="dataSource[index].ENERGY" size="8" type="text" name="" id="">
+      </td>
+    </tr>
+    <tr class="row-border">
+      <th class="row-header">CAPACITY:</th>
+      <td *ngFor="let load of dataSource; let index = index;">
+        <input [(ngModel)]="dataSource[index].CAPACITY" size="8" type="text" name="" id="">
+      </td>
+    </tr>
+<!--    <tr>-->
+<!--      <th class="row-header">CAPACITY:</th>-->
+<!--      <td *ngFor="let load of dataSource; let index = index;">-->
+
+<!--          <mat-form-field style="width:50% !important" appearance="fill">-->
+<!--            <mat-label>Input</mat-label>-->
+<!--            <input matInput>-->
+<!--          </mat-form-field>-->
+<!--      </td>-->
+<!--    </tr>-->
+  </table>
+</div>
